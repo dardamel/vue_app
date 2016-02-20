@@ -1,0 +1,14 @@
+services:
+#    app_main.example:
+#        class: App\MainBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    app_main.serializer.method:
+        class: Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer
+    app_main.serializer.encoder.json:
+        class: Symfony\Component\Serializer\Encoder\JsonEncoder
+    app_main.serializer:
+        class: Symfony\Component\Serializer\Serializer
+        arguments:
+            - [@app_main.serializer.method]
+            - {json: @app_main.serializer.encoder.json }

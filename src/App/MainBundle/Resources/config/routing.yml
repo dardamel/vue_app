@@ -1,0 +1,37 @@
+app_main_admin_category:
+    resource: "@AppMainBundle/Resources/config/routing/category.yml"
+    prefix:   /admin/category
+
+app_main_admin_article:
+    resource: "@AppMainBundle/Resources/config/routing/article.yml"
+    prefix:   /admin/article
+
+
+home:
+    path:     /home
+    defaults: { _controller: AppMainBundle:Default:home }
+
+list:
+    path:     /list
+    defaults: { _controller: AppMainBundle:Default:list }
+
+show:
+    path:     /show
+    defaults: { _controller: AppMainBundle:Default:show }
+    
+menu:
+    path:     /menu
+    defaults: { _controller: AppMainBundle:Default:menu }
+    
+category:
+    path:     /category/{link}
+    defaults: { _controller: AppMainBundle:Default:category }
+    
+article:
+    path:     /article/{link}
+    defaults: { _controller: AppMainBundle:Default:article }
+    
+contact:
+    path:     /contact_form
+    defaults: { _controller: AppMainBundle:Default:contact }
+    methods:  [POST]
