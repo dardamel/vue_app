@@ -1,3 +1,7 @@
+app_main_admin_contact:
+    resource: "@AppMainBundle/Resources/config/routing/contact.yml"
+    prefix:   /admin/contact
+
 app_main_admin_category:
     resource: "@AppMainBundle/Resources/config/routing/category.yml"
     prefix:   /admin/category
@@ -6,6 +10,9 @@ app_main_admin_article:
     resource: "@AppMainBundle/Resources/config/routing/article.yml"
     prefix:   /admin/article
 
+contact:
+    path:     /admin
+    defaults: { _controller: AppMainBundle:Default:admin }
 
 home:
     path:     /home

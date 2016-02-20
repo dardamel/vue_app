@@ -91,4 +91,8 @@ class DefaultController extends Controller
         
         return new JsonResponse(array('message' => 'Twoje zapytanie zostało zapisane.'));
     }
+    
+    public function adminAction(){
+        return $this->render('AppMainBundle:Admin:index.html.twig');
+    }
 }

@@ -1,6 +1,6 @@
 var cmsApp = angular.module('cmsApp', ['ngRoute', 'ngResource','ngSanitize']);
 
-cmsApp.constant('apiPrefix', 'web/app_dev.php');
+cmsApp.constant('apiPrefix', 'web');
 
 cmsApp.config(function($routeProvider) {
     $routeProvider
