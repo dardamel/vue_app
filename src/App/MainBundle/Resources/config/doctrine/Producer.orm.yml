@@ -1,0 +1,26 @@
+App\MainBundle\Entity\Producer:
+    type: entity
+    table: null
+    repositoryClass: App\MainBundle\Entity\ProducerRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        origin:
+            type: string
+            length: 255
+            nullable: true
+    oneToMany:
+        cars:
+            targetEntity: Car
+            mappedBy: producer
+        models:
+            targetEntity: Model
+            mappedBy: producer
+    lifecycleCallbacks: {  }

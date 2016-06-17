@@ -1,22 +1,18 @@
-app_main_admin_contact:
-    resource: "@AppMainBundle/Resources/config/routing/contact.yml"
-    prefix:   /admin/contact
+get_all:
+    path:     /get_all/{resource}
+    defaults: { _controller: AppMainBundle:Default:getAll }
 
-app_main_admin_category:
-    resource: "@AppMainBundle/Resources/config/routing/category.yml"
-    prefix:   /admin/category
+remove_element:
+    path:     /remove_element/{resource}/{id}
+    defaults: { _controller: AppMainBundle:Default:removeElement }
 
-app_main_admin_article:
-    resource: "@AppMainBundle/Resources/config/routing/article.yml"
-    prefix:   /admin/article
-
-contact:
-    path:     /admin
-    defaults: { _controller: AppMainBundle:Default:admin }
-
-home:
-    path:     /home
-    defaults: { _controller: AppMainBundle:Default:home }
+save_element:
+    path:     /save_element/{resource}
+    defaults: { _controller: AppMainBundle:Default:saveElement }
+    
+get_element:
+    path:     /get_element/{resource}/{id}
+    defaults: { _controller: AppMainBundle:Default:getElement }
 
 list:
     path:     /list

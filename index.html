@@ -1,26 +1,59 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>CMS - RIA projekt</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/app.css">
-    <link rel="stylesheet" href="public/css/starter-template.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.min.js"></script>
-    <script src="public/js/app.js"></script>
-    <script src="public/js/services.js"></script>
-    <script src="public/js/controllers/articles.js"></script>
-</head>
-<body ng-app="cmsApp">
-    
-    <cms-app-menu></cms-app-menu>
-    <div class="container main-container">
-        <div ng-view></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="public/css/dashboard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid" id="app">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a v-link="{ path: '/carList' }">Samochody</a></li>
+            <li><a v-link="{ path: '/modelList' }">Modele</a></li>
+            <li><a v-link="{ path: '/producerList' }">Producenci</a></li>
+          </ul>
+        </div>
+          
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <router-view></router-view>
+        </div>
+      </div>
     </div>
-    
-    
-</body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="public/lib/bootstrap.min.js"></script>
+    <script src="public/lib/vue.min.js"></script>
+    <script src="public/lib/vue-router.min.js"></script>
+    <script src="public/lib/vue-resource.min.js"></script>
+    <script src="public/app.js"></script>
+  </body>
 </html>
+

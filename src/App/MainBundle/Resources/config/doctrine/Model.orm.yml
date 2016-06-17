@@ -1,0 +1,27 @@
+App\MainBundle\Entity\Model:
+    type: entity
+    table: null
+    repositoryClass: App\MainBundle\Entity\ModelRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    oneToMany:
+        cars:
+            targetEntity: Car
+            mappedBy: model
+    manyToOne:
+        producer:
+            targetEntity: Producer
+            inversedBy: models
+            joinColumn:
+                name: producer_id
+                referencedColumnName: id
+                onDelete: SET NULL
+    lifecycleCallbacks: {  }
